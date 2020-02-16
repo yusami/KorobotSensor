@@ -12,8 +12,8 @@
 
 ## Requirement
 
-* Python 3.7
-* Twitter API keys
+* [Python 3.7](https://www.python.org/downloads/)
+* [Twitter Access tokens](https://developer.twitter.com/ja/docs/basics/authentication/guides/access-tokens)
 * [PLANEX Sensor WS-USB01-THP](https://amzn.to/38yjbJc) and [API keys](https://www.planex.co.jp/products/ws-usb/)
 
 ## Install
@@ -24,10 +24,27 @@ $ pip3 install python-dotenv pytz python-dateutil twitter
 
 ## Usage
 
+* Set API keys in `.env` file.
+
+~~~
+TW_CONSUMER_KEY=...
+TW_CONSUMER_SECRET=...
+TW_TOKEN=...
+TW_TOKEN_SECRET=...
+SENSOR_MAC=...
+SENSOR_TOKEN=...
+~~~
+
 * Call the command below.
 
 ~~~
 $ python3 main.py
+~~~
+
+* Example output:
+
+~~~
+Time:2020-02-16T11:48:02+09:00, Temperature:25.47 degrees, Humidity:49.1%, Air pressure:1007.37hPa
 ~~~
 
 ## TODO
