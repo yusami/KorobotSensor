@@ -2,15 +2,19 @@
 
 ## Overview
 
-* Get the sensor values and tweet them.
+* Fetch the sensor values and tweet them.
 
 ## Description
 
-* xxx
+* Fetch the sensor values via [PLANEX API](https://www.planex.co.jp/products/ws-usb/).
+* Convert the time to Japanese local time (JST).
+* Tweet the latest values.
 
 ## Requirement
 
 * Python 3.7
+* Twitter API keys
+* [PLANEX Sensor WS-USB01-THP](https://amzn.to/38yjbJc) and [API keys](https://www.planex.co.jp/products/ws-usb/)
 
 ## Install
 
