@@ -26,9 +26,9 @@ def main():
     try:
         with urllib.request.urlopen(req) as res:
             # Parse the response
-            body = json.load(res)
-            # print(body)
-            for item in body:
+            items = json.load(res)
+            # print(items)
+            for item in items:
                 print(item)
                 # print(item[0])
                 # Convert the time from UTC to JST
@@ -41,8 +41,10 @@ def main():
                     # print(i)
                 # print("-temperature:{0}, humidity:{1}, air pressure:{2}".format(item[1], item[2], item[3]))
 
+            if len(items) == 0:
+                return None
             # Print the latest data
-            item = body[-1]
+            item = items[-1]
             dt = parser.parse(item[0]+"Z").astimezone(timezone('UTC'))
             # item[0] = dt.astimezone(timezone('Asia/Tokyo')).strftime("%Y-%m-%d %H:%M:%S")
             item[0] = dt.replace(microsecond=0).astimezone(timezone('Asia/Tokyo')).isoformat()
