@@ -14,7 +14,7 @@ def main():
         if item != None:
             break
         # Wait a while and retry if an error occurs
-        print("retrying...")
+        print("-Retrying...")
         time.sleep(5)
 
     # No date is avaiable so we have nothing to do here

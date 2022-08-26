@@ -12,7 +12,7 @@
 
 ## Requirement
 
-* [Python 3.9](https://www.python.org/downloads/)
+* [Python 3.10](https://www.python.org/downloads/)
 * [Twitter Access tokens](https://developer.twitter.com/ja/docs/basics/authentication/guides/access-tokens)
 * [PLANEX Sensor WS-USB01-THP](https://amzn.to/38yjbJc) and [API keys](https://www.planex.co.jp/products/ws-usb/)
 
