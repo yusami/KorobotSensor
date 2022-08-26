@@ -12,7 +12,7 @@
 
 ## Requirement
 
-* [Python 3.7](https://www.python.org/downloads/)
+* [Python 3.9](https://www.python.org/downloads/)
 * [Twitter Access tokens](https://developer.twitter.com/ja/docs/basics/authentication/guides/access-tokens)
 * [PLANEX Sensor WS-USB01-THP](https://amzn.to/38yjbJc) and [API keys](https://www.planex.co.jp/products/ws-usb/)
 
@@ -57,7 +57,7 @@ Time:2020-02-16T11:48:02+09:00, Temperature:25.47 degrees, Humidity:49.1%, Air p
 
 ## Licence
 
-* Copyright &copy; 2020 yusami
+* Copyright &copy; 2020-2022 yusami
 * Licensed under the [Apache License, Version 2.0][Apache]
 
 [Apache]: http://www.apache.org/licenses/LICENSE-2.0
