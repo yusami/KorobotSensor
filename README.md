@@ -55,6 +55,11 @@ Time:2020-02-16T11:48:02+09:00, Temperature:25.47 degrees, Humidity:49.1%, Air p
 
 * xxx
 
+
+## Changelog
+
+- 2023/05/06 Support Twitter API v2.
+
 ## Licence
 
 * Copyright &copy; 2020-2023 yusami

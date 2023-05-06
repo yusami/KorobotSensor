@@ -1,14 +1,31 @@
-import config
 import time
 import sensor
-import sys
-from twitter import *
+import os
+import tweepy
+from dotenv import load_dotenv
 
 def main():
-    tw = Twitter(auth=OAuth(config.TW_TOKEN, config.TW_TOKEN_SECRET, config.TW_CONSUMER_KEY, config.TW_CONSUMER_SECRET))
+    # Twitter configs
+    load_dotenv(verbose=True)
+    CONSUMER_KEY = os.environ.get("TW_CONSUMER_KEY")
+    assert CONSUMER_KEY != None, "TW_CONSUMER_KEY should be configured."
+    CONSUMER_SECRET = os.environ.get("TW_CONSUMER_SECRET")
+    assert CONSUMER_SECRET != None, "TW_CONSUMER_SECRET should be configured."
+    ACCESS_TOKEN = os.environ.get("TW_TOKEN")
+    assert CONSUMER_KEY != None, "TW_TOKEN should be configured."
+    ACCESS_SECRET = os.environ.get("TW_TOKEN_SECRET")
+    assert CONSUMER_KEY != None, "TW_TOKEN_SECRET should be configured."
+
+    # Twitter client
+    client = tweepy.Client(
+        consumer_key = CONSUMER_KEY,
+        consumer_secret = CONSUMER_SECRET,
+        access_token = ACCESS_TOKEN,
+        access_token_secret = ACCESS_SECRET
+    )
   
+    # Fetch the sensor data
     item = None
-    # Post a message
     for i in range(10):
         item = sensor.main()
         if item != None:
@@ -21,12 +38,12 @@ def main():
     if item == None:
         print("No sensor date is available")
         sys.exit(1)
-    # print("-time:{0[0]}, temperature:{0[1]}degrees, humidity:{0[2]}%, air pressure:{0[3]}hPa".format(item))
     msg = "Time:{0[0]}, Temperature:{0[1]} degrees, Humidity:{0[2]}%, Air pressure:{0[3]}hPa".format(item)
     print(msg)
-    tw.statuses.update(status=msg)
+
+    # Post a message
+    client.create_tweet(text=msg)
     print("Tweet is done successfully.")
 
 if __name__ == '__main__':
     main()
-

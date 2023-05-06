@@ -14,7 +14,7 @@ help: ## Show help text
 all: clean install run ## Install libs and run the script
 
 install: ## Install libs
-	$(PIP) install python-dotenv pytz python-dateutil twitter
+	$(PIP) install python-dotenv pytz python-dateutil tweepy
 
 outdated: ## Show the outdated libs
 	$(PIP) list --outdated
