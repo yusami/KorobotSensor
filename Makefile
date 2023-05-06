@@ -1,6 +1,9 @@
 .PHONY: help all run clean
 .DEFAULT_GOAL := run
 
+PYTHON := python3.11
+PIP    := pip3.11
+
 help: ## Show help text
 	@echo "Description:"
 	@echo "  Quick build tool"
@@ -11,13 +14,13 @@ help: ## Show help text
 all: clean install run ## Install libs and run the script
 
 install: ## Install libs
-	pip3 install python-dotenv pytz python-dateutil twitter
+	$(PIP) install python-dotenv pytz python-dateutil twitter
 
 outdated: ## Show the outdated libs
-	pip3 list --outdated
+	$(PIP) list --outdated
 
 run: ## Run the script (default)
-	python3 main.py
+	$(PYTHON) main.py
 
 clean: ## Delete the existing libs
 	rm -rf ./__pycache__
